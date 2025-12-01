@@ -26,6 +26,8 @@ function App() {
   const handleLoadMore = () =>
     setVisible((prev) => prev + ITEMS_PER_PAGE);
 
+  const { query, setQuery, filtered } = useSearch(products);
+
   // 3. Renderização
   return (
     <main>
@@ -35,13 +37,14 @@ function App() {
 
       {products && (
         <>
-          <ProductList products={products.slice(0, visibleCount)} />
+          <SearchBar value={query} onChange={setQuery} />
+          <ProductList products={filtered.slice(0, visibleCount)} />
 
           <Button
             onClick={handleLoadMore}
-            disabled={visibleCount >= products.length}
+            disabled={visibleCount >= filtered.length}
           >
-            {visibleCount >= products.length
+            {visibleCount >= filtered.length
               ? "Fim dos produtos"
               : "Carregar Mais"}
           </Button>
