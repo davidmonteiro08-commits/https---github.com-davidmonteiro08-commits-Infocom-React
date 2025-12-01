@@ -9,13 +9,13 @@ function App() {
   const [error, setError] = useState(null);
 
   // Fetch dos produtos
-useEffect(() => {
+ useEffect(() => {
   fetch("https://fakestoreapi.com/products")
     .then((res) => res.json())
     .then(setProducts)
     .catch(() => setError("Erro ao carregar produtos."))
     .finally(() => setLoading(false));
-}, []);
+ }, []);
 
   return (
     <>
