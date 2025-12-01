@@ -3,6 +3,8 @@ import ProductList from './components/ProductList';
 import Button from './components/Button';
 import './App.css';
 
+const ITEMS_PER_PAGE = 8;     // mostra 8 itens por vez
+
 function App() {
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(true);
