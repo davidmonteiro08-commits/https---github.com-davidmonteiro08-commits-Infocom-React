@@ -9,6 +9,7 @@ function App() {
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [visibleCount, setVisible]   = useState(ITEMS_PER_PAGE); // quantos estão visíveis
 
   // Fetch dos produtos
  useEffect(() => {
@@ -18,6 +19,10 @@ function App() {
     .catch(() => setError("Erro ao carregar produtos."))
     .finally(() => setLoading(false));
  }, []);
+
+ const handleLoadMore = () => {
+  setVisible((prev) => prev + ITEMS_PER_PAGE);
+ };
 
   return (
     <>
