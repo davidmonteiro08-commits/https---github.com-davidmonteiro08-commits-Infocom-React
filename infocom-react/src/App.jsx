@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import './App.css';
+import ProductCard from "./components/Products";
 
 function App() {
   const [products, setProducts] = useState(null);
@@ -19,6 +20,7 @@ useEffect(() => {
     <>
     <main>
       <h1>Catálogo de produtos</h1>
+      {products && <ProductCard product={products[0]}/>}
     </main>
     </>
   )
