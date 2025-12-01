@@ -1,3 +1,5 @@
+import SearchBar from "./components/SearchBar";
+import { useSearch } from "./hooks/useSearch";
 import { useEffect, useState } from 'react';
 import ProductList from './components/ProductList';
 import Button from './components/Button';
