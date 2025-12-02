@@ -1,10 +1,15 @@
+/* MUDOU AQUI */
+* {
+  box-sizing: border-box;
+}
+
+/* MUDOU AQUI */
 body {
   margin: 0;
   font-family: sans-serif;
   background: #f5f5f5;
   display: flex;
   justify-content: center;
-  padding: 2rem;
 }
 
 #root {
