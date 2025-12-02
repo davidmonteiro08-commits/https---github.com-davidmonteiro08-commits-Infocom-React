@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import { useSearch } from "./hooks/useSearch";
 import { useEffect, useState } from 'react';
@@ -31,6 +32,7 @@ function App() {
   // 3. Renderização
   return (
     <main>
+      <Navbar/>
       {loading && <p>Carregando produtos...</p>}
 
       {error && <div className='error'>{error}</div>}
