@@ -1,8 +1,15 @@
 import './Button.css';
 
-function Button({ children, ...props }) {
+function Button({ children, variant, ...props }) {
+
+  let className = "btn-default ";
+
+  if (variant === "secondary") {
+    className += "btn-secondary ";
+  }
+
   return (
-    <button className="btn-default" {...props}>
+    <button className={className} {...props}>
       {children}
     </button>
   );
