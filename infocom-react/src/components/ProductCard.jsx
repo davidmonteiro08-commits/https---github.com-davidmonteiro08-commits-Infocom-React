@@ -13,7 +13,15 @@ function ProductCard({ product, detailedView = false }) {
 
     return (
     <div className='card' onClick={handleClick}>
-      {/* Código existente */}
+       {<div className='card'>
+       <img src={product.image} alt={product.title} />
+
+       <div className='separator'></div>
+
+       <div className='price'>R$ {product.price.toFixed(2).replace(".", ",")}</div>
+
+       <h3>{product.title}</h3>
+       </div>}
 
       {detailedView && (
         <>
