@@ -3,10 +3,12 @@ import { useProduct } from "../hooks/useProducts";
 import ProductCard from "../components/ProductCard";
 import "./ProductDetails.css";
 import Button from "../components/Button";
+import { useCart } from "../hooks/useCart";
 
 function ProductDetails() {
   const { id } = useParams();
   const { product, loading, error } = useProduct(id);
+  const { addItem } = useCart(); // hook para acessar o contexto do carrinho
 
   if (loading) return <p>Carregando detalhes do produto...</p>;
   if (error) return <div className='error'>{error}</div>;
@@ -15,7 +17,7 @@ function ProductDetails() {
   return (
     <div className="product-details">
       <ProductCard product={product} detailedView={true} />
-      <Button>Comprar</Button>
+      <Button onClick={() => addItem(product, 1)}>Comprar</Button>
       <Link to="/">
         <Button variant="secondary">Início</Button>
       </Link>

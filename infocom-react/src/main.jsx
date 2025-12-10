@@ -29,16 +29,11 @@ const router = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
-);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
     <CartProvider>
       <RouterProvider router={router} />
     </CartProvider>
-  </React.StrictMode>
+  </StrictMode>
 );
