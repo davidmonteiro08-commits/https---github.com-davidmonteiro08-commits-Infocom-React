@@ -5,6 +5,7 @@ import './index.css';
 import App from './App.jsx';
 import Home from "./pages/Home.jsx"; // importação da página Home
 import ProductDetails from "./pages/ProductDetails.jsx"; // importação da página de detalhes
+import { CartProvider } from "./contexts/CartContext";
 
 const router = createBrowserRouter([
   {
@@ -27,4 +28,12 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
+);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  </React.StrictMode>
 );
